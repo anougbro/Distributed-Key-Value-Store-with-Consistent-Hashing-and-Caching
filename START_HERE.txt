@@ -1,0 +1,263 @@
+╔════════════════════════════════════════════════════════════════════╗
+║                                                                    ║
+║         DISTRIBUTED KEY-VALUE STORAGE SYSTEM                       ║
+║              WITH CONSISTENT HASHING & CACHING                     ║
+║                                                                    ║
+╚════════════════════════════════════════════════════════════════════╝
+
+🚀 QUICK START (3 MINUTES)
+
+1️⃣  Install Dependencies
+    ```
+    npm install
+    ```
+
+2️⃣  Start the Application
+    ```
+    npm run dev
+    ```
+    
+    ✅ Opens automatically at http://localhost:5173
+
+3️⃣  Click These Buttons
+    1. "Initialize Cluster (3 nodes)"
+    2. "Load Sample Data"
+    3. Explore the tabs!
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+📚 DOCUMENTATION
+
+  README.md          → Full project documentation
+  QUICKSTART.md      → Quick start guide with examples
+  ARCHITECTURE.md    → Deep dive into system design
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🎯 WHAT YOU'LL LEARN
+
+  ✓ Consistent hashing algorithm
+  ✓ Distributed system design
+  ✓ Data replication & availability
+  ✓ LRU caching strategies
+  ✓ Fault tolerance & failover
+  ✓ System transparency & abstraction
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+📁 PROJECT STRUCTURE
+
+  src/
+    ├── kvstore.js      Core distributed system logic
+    ├── App.jsx         React UI component
+    ├── App.css         Styling
+    └── main.jsx        Entry point
+  
+  index.html           Web page template
+  package.json         Dependencies
+  vite.config.js       Vite configuration
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+⚡ COOL THINGS TO TRY
+
+  1. Scale to 10 nodes (observe data distribution)
+  2. Fail nodes (system still works via replicas!)
+  3. Recover failed nodes (smooth transition)
+  4. Add then remove nodes (watch redistribution)
+  5. Observe hash ring visualization
+  6. Check cache hit statistics
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔍 SYSTEM FEATURES
+
+  Consistent Hashing
+  ├─ Hash ring with virtual nodes
+  ├─ Minimal data movement on topology change
+  └─ O(log n) lookup time
+
+  Replication
+  ├─ Each key stored on 2 nodes (configurable)
+  ├─ Automatic failover
+  └─ Availability without SPOF
+
+  Caching
+  ├─ LRU eviction policy
+  ├─ TTL-based expiration (60 seconds)
+  └─ Reduces latency dramatically
+
+  Fault Tolerance
+  ├─ Node failure simulation
+  ├─ Graceful degradation
+  └─ Automatic recovery
+
+  Transparency
+  ├─ Hidden node complexity
+  ├─ Single KV interface
+  └─ Consistent behavior
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+💻 SAMPLE DATA
+
+  The system comes pre-loaded with:
+
+  user:101 → {"name": "Alice"}
+  user:102 → {"name": "Bob"}
+  user:103 → {"name": "Charlie"}
+  user:104 → {"name": "Diana"}
+  user:105 → {"name": "Eve"}
+  user:106 → {"name": "Frank"}
+
+  Try GET: user:101
+  Try SET: user:107:{"name":"Grace"}
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🎓 TABS EXPLAINED
+
+  📊 Overview
+     System-wide statistics and key metrics
+     Good starting point to understand overall health
+
+  🖥️  Nodes
+     Individual node details and actions
+     See what data lives where
+     Simulate failures and recovery
+
+  🔄 Hash Ring
+     Visual representation of consistent hashing
+     Watch nodes position themselves
+     See virtual node distribution
+
+  📋 Logs
+     All requests logged with timestamps
+     Track cache hits vs misses
+     Debug routing decisions
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🐛 TROUBLESHOOTING
+
+  "npm install" fails?
+    → Make sure you have Node.js v16+ installed
+    → Try: npm cache clean --force
+
+  Port 5173 in use?
+    → Vite automatically uses 5174, 5175, etc.
+    → Or kill: lsof -ti:5173 | xargs kill -9
+
+  No data showing?
+    → Click "Initialize Cluster" first
+    → Then "Load Sample Data"
+
+  Node not responding?
+    → This is normal when simulated as failed
+    → Click "Recover" to bring it back
+    → Or try getting data from another node
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔧 CUSTOMIZATION
+
+  In src/App.jsx:
+    • Change sample data
+    • Adjust replication factor
+    • Modify initial node count
+
+  In src/kvstore.js:
+    • Change virtual nodes count
+    • Adjust cache size
+    • Modify TTL values
+    • Change failure rate
+
+  In src/App.css:
+    • Change colors
+    • Adjust spacing
+    • Customize fonts
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+📖 NEXT STEPS
+
+  1. Read QUICKSTART.md for 5-minute overview
+  2. Explore the UI for 10 minutes
+  3. Read ARCHITECTURE.md for technical details
+  4. Modify code and experiment
+  5. Study kvstore.js implementation
+  6. Try advanced scenarios
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🌟 KEY CONCEPTS AT A GLANCE
+
+  Consistent Hashing
+  Like cutting a pizza into slices. Each node gets a slice.
+  When you add a node, only adjacent slices are recut.
+  Result: Minimal data reshuffling!
+
+  Replication
+  Keep copies of data on multiple nodes.
+  If one node dies, you still have the data elsewhere.
+  Trade: More storage for availability.
+
+  Caching
+  Remember recent accesses locally.
+  Saves trips to disk/other nodes.
+  Speed boost: 100x-1000x faster!
+
+  Fault Tolerance
+  System continues despite failures.
+  Not perfect, but graceful degradation.
+  With replication, can lose some nodes.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+💡 LEARNING PATH
+
+  ╔══════════════════════════════════════════════════════════════╗
+  ║  BEGINNER (5 min)                                            ║
+  ║  Just click around and observe                              ║
+  ║  What happens when nodes fail? Why?                          ║
+  ╚══════════════════════════════════════════════════════════════╝
+
+  ╔══════════════════════════════════════════════════════════════╗
+  ║  INTERMEDIATE (30 min)                                       ║
+  ║  Read the code and understand flow                           ║
+  ║  How does consistent hashing work?                           ║
+  ║  Trace a key through the system                              ║
+  ╚══════════════════════════════════════════════════════════════╝
+
+  ╔══════════════════════════════════════════════════════════════╗
+  ║  ADVANCED (1+ hour)                                          ║
+  ║  Modify and extend the system                                ║
+  ║  Add persistence, read repair, quorum consistency            ║
+  ║  Build on this foundation                                    ║
+  ╚══════════════════════════════════════════════════════════════╝
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🎯 WHAT THIS TEACHES YOU
+
+  Real-world systems like:
+  ├─ Memcached (distributed caching)
+  ├─ Redis Cluster (in-memory data store)
+  ├─ Cassandra (NoSQL database)
+  ├─ DynamoDB (AWS key-value service)
+  └─ Couchbase (distributed database)
+
+  Use these same principles!
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+✨ YOU'RE READY!
+
+  Type:    npm install
+  Then:    npm run dev
+  
+  Happy learning! 🚀
+
+  Questions? Check the README.md and ARCHITECTURE.md files.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
